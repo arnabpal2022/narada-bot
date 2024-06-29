@@ -25,7 +25,7 @@ async def on_message(message):
     if bot.user.mentioned_in(message):
         print(bot.user.id)
         await message.reply("Working on it!")
-        exe =  run_crew(message.content)
+        exe =  run_crew(message.content[23:])
         if exe is not None:
             if exe == "True":
                 await message.reply("Task Completed <3")

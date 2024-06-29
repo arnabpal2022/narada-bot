@@ -4,8 +4,9 @@ from crewai import Agent, Task
 from langchain_google_genai import ChatGoogleGenerativeAI
 import json
 import re
+from events.create_event_prompt import create_event
 
-llm = ChatGoogleGenerativeAI(model='gemini-1.0-pro')
+llm = ChatGoogleGenerativeAI(model='gemini-1.5-flash')
 # executed_value = None
 
 from composio_crewai import ComposioToolSet, Action, App
@@ -15,14 +16,16 @@ tools = composio_toolset.get_tools(apps=[App.GOOGLECALENDAR])
 
 def run_crew(msg):
 
-    todo = "Detect Start Datetime and End Datetime and Convert them to RFC3339 Format, Then take the input as the format"
+    todo = "Detect Start Datetime and End Datetime from the input without using any actions and Convert them to RFC3339 Format, Then take the input as the format"
 
     crewai_agent = Agent(
         role="Google Calendar Agent",
         goal="""You take action on Google Calendar using Google Calendar APIs""",
         backstory=(
             """You are an AI agent responsible for taking actions on Google Calendar on users' behalf. 
-            You need to take action on Calendar using Google Calendar APIs. Use correct tools to run APIs from the given tool-set."""
+            You need to take action on Calendar using Google Calendar APIs. Use correct tools to run APIs from the given tool-set.And if you think the task is complete then exit the program.
+            the default timezone is India Standard Time (IST) and the default calendar is primary.
+            """
         ),
         verbose=True,
         tools=tools,
@@ -35,6 +38,7 @@ def run_crew(msg):
         expected_output="if Event is Created"
     )
 
+    
     try:
         res = task.execute()
         
@@ -70,11 +74,3 @@ def run_crew(msg):
     except Exception as ex:
         print(f"An error occurred: {ex}")
         # Handle other exceptions
-
-# Example usage
-# run_crew("Create an Event 'Meeting' From 2pm to 4pm. The Date is 29th June, 2024, Timezone is Indian Timezone.")
-
-# # Save executed_value to a file for use in another script
-# if executed_value is not None:
-#     with open('executed_value.txt', 'w') as file:
-#         file.write(executed_value)
