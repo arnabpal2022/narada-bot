@@ -1,0 +1,5 @@
+crewai
+langchain_google_genai
+composio_crewai
+discord.py
+python-dotenv

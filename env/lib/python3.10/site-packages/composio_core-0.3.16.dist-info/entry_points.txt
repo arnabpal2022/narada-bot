@@ -1,0 +1,2 @@
+[console_scripts]
+composio = composio.cli:composio
