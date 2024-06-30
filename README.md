@@ -51,7 +51,7 @@ Narada is a powerful Discord bot that seamlessly integrates with Google Calendar
    ![Screenshot 2024-06-30 001426](https://github.com/arnabpal2022/narada-bot/assets/119407936/9eec43df-5270-420a-a775-d442be96fd3a)
    Page 2-
    ![Screenshot 2024-06-30 000301](https://github.com/arnabpal2022/narada-bot/assets/119407936/7fc1d9e2-00ce-46ff-ba6a-c73411b29217)
-
+   For more details, visit the <a href="https://naradabot.vercel.app/">Narada Project Page.</a>
 
 ## 📄 Code Overview
 
