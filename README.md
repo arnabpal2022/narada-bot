@@ -12,13 +12,13 @@ Narada is a powerful Discord bot that seamlessly integrates with Google Calendar
 
 ## 🛠️ Requirements
 
-To run Narada, make sure you have the following dependencies installed:<br>
+   To run Narada, make sure you have the following dependencies installed:<br>
 
-crewai<br>
-langchain_google_genai<br>
-composio_crewai<br>
-discord.py<br>
-python-dotenv
+   crewai<br>
+   langchain_google_genai<br>
+   composio_crewai<br>
+   discord.py<br>
+   python-dotenv
 
 ## 🚀 Installation
 
@@ -43,6 +43,13 @@ python-dotenv
 2. **Interact with the Bot**:
    Mention the bot in your Discord server with event commands.<br>
    Example: @Narada Create an Event 'Meeting' From 2pm to 4pm on 29th June, 2024, Timezone is Indian Timezone.
+
+
+## 🌐 Landing Page
+   Here are some screenshots of Narada in action:
+   Page 1-
+   ![Alt text](ss/Screenshot 2024-06-30 001426.png)
+
 
 ## 📄 Code Overview
 
