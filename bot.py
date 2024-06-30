@@ -35,7 +35,7 @@ async def on_message(message):
             await message.reply("Task Failed :(")
 
 
-bot.run('MTI1NjQ4MDU5MDUzOTEzMjk3Mg.G9SAAM.1fitF7Jf5OmiSrLgVbwIZ82wvWZVkpfB8cm9QE')
+bot.run(DISCORD_API_KEY)
 
 
 
